@@ -1,6 +1,6 @@
 //
 // Created by Javier Arango on 4/7/22.
-//
+// https://github.com/javier-arango/simplified-page-rank-algorithm/blob/main/Page%20Rank/pageRank.cpp
 
 #include <iostream>  // std::fixed
 #include <iterator>
