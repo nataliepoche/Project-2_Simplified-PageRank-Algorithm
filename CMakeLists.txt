@@ -15,4 +15,5 @@ add_executable(Project_2_Simplified_PageRank_Algorithm
         .idea/workspace.xml
         src/graph.h
         src/main.cpp
-        README.md)
+        README.md
+        src2_Javier-Arango/pageRank.cpp)
