@@ -1,4 +1,17 @@
 "C:\Program Files\JetBrains\CLion 2023.3.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2023.3.2/bin/ninja/win/x64/ninja.exe" -DCMAKE_CXX_COMPILER=C:/mingw64/bin/g++.exe -G Ninja -S C:\Users\Owner\CLionProjects\Data_Structures\Project-2_Simplified-PageRank-Algorithm -B C:\Users\Owner\CLionProjects\Data_Structures\Project-2_Simplified-PageRank-Algorithm\cmake-build-debug
 -- Configuring done (0.9s)
+CMake Error at CMakeLists.txt:35 (target_link_libraries):
+  Target "Tests" links to:
+
+    Catch2::Catch2WithMain
+
+  but the target was not found.  Possible reasons include:
+
+    * There is a typo in the target name.
+    * A find_package call is missing for an IMPORTED target.
+    * An ALIAS target is missing.
+
+
+
 -- Generating done (0.0s)
--- Build files have been written to: C:/Users/Owner/CLionProjects/Data_Structures/Project-2_Simplified-PageRank-Algorithm/cmake-build-debug
+CMake Generate step failed.  Build files cannot be regenerated correctly.

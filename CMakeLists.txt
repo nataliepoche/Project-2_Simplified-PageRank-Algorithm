@@ -3,9 +3,20 @@ project(Project_2_Simplified_PageRank_Algorithm)
 
 set(CMAKE_CXX_STANDARD 14)
 
+Include(FetchContent)
+FetchContent_Declare(
+        Catch2
+        GIT_REPOSITORY https://github.com/catchorg/Catch2.git
+        GIT_TAG        v3.4.0 # seems to work with CLion - if you run into problems, try an older version of catch2 v3
+)
+FetchContent_MakeAvailable(Catch2)
+
 include_directories(.)
 include_directories(.idea)
 include_directories(src)
+#include(CTest)
+#include(Catch2)
+#catch_discover_tests(Tests)
 
 add_executable(Project_2_Simplified_PageRank_Algorithm
         .idea/.gitignore
@@ -16,4 +27,14 @@ add_executable(Project_2_Simplified_PageRank_Algorithm
         src/graph.h
         src/main.cpp
         README.md
-        src2_Javier-Arango/pageRank.cpp)
+        src2_Javier-Arango/pageRank.cpp
+)
+
+add_executable(Tests
+        src/test.cpp
+        src/main.cpp
+        src/graph.h
+        src/catch.hpp
+)
+
+target_link_libraries(Tests PRIVATE Catch2::Catch2WithMain)

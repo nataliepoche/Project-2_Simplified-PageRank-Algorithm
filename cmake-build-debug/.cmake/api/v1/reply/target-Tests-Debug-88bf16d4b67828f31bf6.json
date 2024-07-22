@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "Project_2_Simplified_PageRank_Algorithm.exe"
+			"path" : "Tests.exe"
 		},
 		{
-			"path" : "Project_2_Simplified_PageRank_Algorithm.pdb"
+			"path" : "Tests.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -14,11 +14,13 @@
 		"commands" : 
 		[
 			"add_executable",
+			"target_link_libraries",
 			"include_directories"
 		],
 		"files" : 
 		[
-			"CMakeLists.txt"
+			"CMakeLists.txt",
+			"cmake-build-debug/_deps/catch2-src/src/CMakeLists.txt"
 		],
 		"nodes" : 
 		[
@@ -28,25 +30,40 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 10,
+				"line" : 33,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 6,
+				"line" : 40,
 				"parent" : 0
 			},
 			{
-				"command" : 1,
-				"file" : 0,
-				"line" : 7,
-				"parent" : 0
+				"file" : 1
 			},
 			{
 				"command" : 1,
+				"file" : 1,
+				"line" : 397,
+				"parent" : 3
+			},
+			{
+				"command" : 2,
 				"file" : 0,
-				"line" : 8,
+				"line" : 14,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 15,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 16,
 				"parent" : 0
 			}
 		]
@@ -63,16 +80,24 @@
 			"includes" : 
 			[
 				{
-					"backtrace" : 2,
+					"backtrace" : 5,
 					"path" : "C:/Users/Owner/CLionProjects/Data_Structures/Project-2_Simplified-PageRank-Algorithm/."
 				},
 				{
-					"backtrace" : 3,
+					"backtrace" : 6,
 					"path" : "C:/Users/Owner/CLionProjects/Data_Structures/Project-2_Simplified-PageRank-Algorithm/.idea"
 				},
 				{
-					"backtrace" : 4,
+					"backtrace" : 7,
 					"path" : "C:/Users/Owner/CLionProjects/Data_Structures/Project-2_Simplified-PageRank-Algorithm/src"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "C:/Users/Owner/CLionProjects/Data_Structures/Project-2_Simplified-PageRank-Algorithm/cmake-build-debug/_deps/catch2-src/src/catch2/.."
+				},
+				{
+					"backtrace" : 2,
+					"path" : "C:/Users/Owner/CLionProjects/Data_Structures/Project-2_Simplified-PageRank-Algorithm/cmake-build-debug/_deps/catch2-build/generated-includes"
 				}
 			],
 			"language" : "CXX",
@@ -80,18 +105,48 @@
 			{
 				"backtraces" : 
 				[
-					1
+					2,
+					2,
+					2,
+					2,
+					2,
+					2,
+					2,
+					2,
+					2,
+					2,
+					2,
+					2,
+					2,
+					2,
+					2,
+					2,
+					2,
+					2,
+					2,
+					2
 				],
 				"standard" : "14"
 			},
 			"sourceIndexes" : 
 			[
-				6,
-				8
+				0,
+				1
 			]
 		}
 	],
-	"id" : "Project_2_Simplified_PageRank_Algorithm::@6890427a1f51a3e7e1df",
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 2,
+			"id" : "Catch2::@fa92aa50e9bf5e1a7206"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "Catch2WithMain::@fa92aa50e9bf5e1a7206"
+		}
+	],
+	"id" : "Tests::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -105,14 +160,24 @@
 				"role" : "flags"
 			},
 			{
+				"backtrace" : 2,
+				"fragment" : "_deps\\catch2-build\\src\\libCatch2Maind.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "_deps\\catch2-build\\src\\libCatch2d.a",
+				"role" : "libraries"
+			},
+			{
 				"fragment" : "-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32",
 				"role" : "libraries"
 			}
 		],
 		"language" : "CXX"
 	},
-	"name" : "Project_2_Simplified_PageRank_Algorithm",
-	"nameOnDisk" : "Project_2_Simplified_PageRank_Algorithm.exe",
+	"name" : "Tests",
+	"nameOnDisk" : "Tests.exe",
 	"paths" : 
 	{
 		"build" : ".",
@@ -121,30 +186,19 @@
 	"sourceGroups" : 
 	[
 		{
-			"name" : "",
+			"name" : "Source Files",
 			"sourceIndexes" : 
 			[
 				0,
-				1,
-				2,
-				3,
-				4,
-				7
+				1
 			]
 		},
 		{
 			"name" : "Header Files",
 			"sourceIndexes" : 
 			[
-				5
-			]
-		},
-		{
-			"name" : "Source Files",
-			"sourceIndexes" : 
-			[
-				6,
-				8
+				2,
+				3
 			]
 		}
 	],
@@ -152,27 +206,14 @@
 	[
 		{
 			"backtrace" : 1,
-			"path" : ".idea/.gitignore",
+			"compileGroupIndex" : 0,
+			"path" : "src/test.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : ".idea/modules.xml",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"path" : ".idea/Project-2_Simplified-PageRank-Algorithm.iml",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"path" : ".idea/vcs.xml",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"path" : ".idea/workspace.xml",
+			"compileGroupIndex" : 0,
+			"path" : "src/main.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -182,20 +223,8 @@
 		},
 		{
 			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "src/main.cpp",
-			"sourceGroupIndex" : 2
-		},
-		{
-			"backtrace" : 1,
-			"path" : "README.md",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "src2_Javier-Arango/pageRank.cpp",
-			"sourceGroupIndex" : 2
+			"path" : "src/catch.hpp",
+			"sourceGroupIndex" : 1
 		}
 	],
 	"type" : "EXECUTABLE"

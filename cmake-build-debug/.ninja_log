@@ -1,0 +1,7 @@
+# ninja log v5
+15	2248	7433357385863176	CMakeFiles/Project_2_Simplified_PageRank_Algorithm.dir/src/main.cpp.obj	eb83faa749514cc7
+43	2286	7433357386260853	CMakeFiles/Project_2_Simplified_PageRank_Algorithm.dir/src2_Javier-Arango/pageRank.cpp.obj	ac22ea260f867f13
+4	22527	7433839114078200	build.ninja	37d4bc60a5f83158
+53	3799	7433839155353102	CMakeFiles/Project_2_Simplified_PageRank_Algorithm.dir/src/main.cpp.obj	eb83faa749514cc7
+18	379	7433840098145879	CMakeFiles/Project_2_Simplified_PageRank_Algorithm.dir/src/main.cpp.obj	eb83faa749514cc7
+380	1227	7433840106471154	Project_2_Simplified_PageRank_Algorithm.exe	baa8e8d0a8f05ae
