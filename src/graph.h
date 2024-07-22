@@ -13,6 +13,7 @@ private: // Variables to initialize
     map<string, float> pageRank; // Stores website and rank (initial rank is -> website : 1/|V|)
 
 public: // helper functions needed in algorithm
+
     // Returns number of unique vertices in |V| graph
     int getVertices(){
 
@@ -24,10 +25,8 @@ public: // helper functions needed in algorithm
     void initializePageRank(){
 
         // Iterator to go through each vertex
-        unordered_map<string, vector<string>>::iterator vertex;
-
-        for(vertex = inDegree.begin(); vertex != inDegree.end(); vertex++){
-            pageRank[vertex->first] = 1.00f / (float) getVertices();
+        for(auto &vertex : inDegree){
+            pageRank[vertex.first] = 1.00f / (float) getVertices();
         }
 
     }
@@ -39,13 +38,21 @@ public: // helper functions needed in algorithm
         map<string, float>::iterator vertex;
 
         for(vertex = pageRank.begin(); vertex != pageRank.end(); vertex++){
-            cout << vertex->second;
-            cout << setprecision(2) << vertex->first << " " << vertex->second << endl;
+            cout << vertex->first << " " << fixed << setprecision(2) << vertex->second << endl;
         }
 
     }
 
     void insertEdge(string &from, string &to){
+
+        if(outDegree.find(from) == outDegree.end()){
+            outDegree[from] = 1;
+        }
+        else{
+            outDegree[from]++;
+        }
+
+        inDegree[to].push_back(from);
 
         // Add (from key) with empty value into graph if not there
         if(outDegree.find(to) == outDegree.end()){
@@ -74,21 +81,20 @@ public: // helper functions needed in algorithm
             newPageRank = pageRank;
 
             // find rank of each webpage
-            unordered_map<string, vector<string>>::iterator webpage;
-
-            for(webpage = inDegree.begin(); webpage != inDegree.end(); webpage++){
+            for(auto &webpage : inDegree){
 
                 float sum = 0.00f; // Sum of result
 
                 // Calculate rank for each page
-                for(auto &link : webpage->second){
+
+                for(auto &link : webpage.second){
 
                     // Sum - (1 / outDegree count of j) * pageRank of i
                     sum += (1.00f / (float)outDegree.find(link)->second) * pageRank[link];
                 }
 
                 // update pageRank
-                newPageRank[webpage->first] = sum;
+                newPageRank[webpage.first] = sum;
             }
 
             pageRank = newPageRank;
