@@ -103,7 +103,13 @@ public: // helper functions needed in algorithm
         printPageRanks(); // print pageRanks
     }
 
-    map<string, float> getPageRanks() const{
-        return pageRank;
+    map<string, float> getRoundedPageRanks(){
+        map<string, float> roundedPageRanks;
+        for(auto &entry : pageRank){
+            ostringstream oss;
+            oss << fixed << setprecision(2) << entry.second;
+            roundedPageRanks[entry.first] = stof(oss.str());
+        }
+        return roundedPageRanks;
     }
 };

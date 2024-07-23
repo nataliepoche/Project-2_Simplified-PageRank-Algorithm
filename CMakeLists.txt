@@ -14,9 +14,6 @@ FetchContent_MakeAvailable(Catch2)
 include_directories(.)
 include_directories(.idea)
 include_directories(src)
-#include(CTest)
-#include(Catch2)
-#catch_discover_tests(Tests)
 
 add_executable(Project_2_Simplified_PageRank_Algorithm
         .idea/.gitignore
@@ -32,7 +29,6 @@ add_executable(Project_2_Simplified_PageRank_Algorithm
 
 add_executable(Tests
         src/test.cpp
-        src/main.cpp
         src/graph.h
         src/catch.hpp
 )
