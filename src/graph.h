@@ -87,7 +87,6 @@ public: // helper functions needed in algorithm
                 float sum = 0.00f; // Sum of result
 
                 // Calculate rank for each page
-
                 for(auto &link : webpage.second){
 
                     // Sum - (1 / outDegree count of j) * pageRank of i
@@ -120,4 +119,5 @@ public: // helper functions needed in algorithm
 
         return roundedPageRanks; // returns rounded pageRank map
     }
+
 };
