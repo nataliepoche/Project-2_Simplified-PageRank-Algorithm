@@ -104,12 +104,20 @@ public: // helper functions needed in algorithm
     }
 
     map<string, float> getRoundedPageRanks(){
+
         map<string, float> roundedPageRanks;
+
+        // Goes through each item in pageRank map<string, float>
         for(auto &entry : pageRank){
             ostringstream oss;
+
+            // sets oss variable to a float value with 2 decimal places
             oss << fixed << setprecision(2) << entry.second;
+
+            // Adjusts map entry to have the rounded number
             roundedPageRanks[entry.first] = stof(oss.str());
         }
-        return roundedPageRanks;
+
+        return roundedPageRanks; // returns rounded pageRank map
     }
 };
